@@ -15,7 +15,7 @@ services:
       - '/var/openfire/data:/var/lib/openfire'
       - '/var/openfire/plugins:/usr/share/openfire/plugins'
 
-  # DATABASE
+  # DATABASE
   db:
     image: mysql:5.7.26
     ports:
