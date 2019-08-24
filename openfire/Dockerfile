@@ -1,7 +1,7 @@
 FROM xqdocker/ubuntu-openjdk:jre-8
 MAINTAINER abdurrahman.eker@detaysoft.com
 
-ENV OPENFIRE_VERSION=4.4.0 \
+ENV OPENFIRE_VERSION=4.4.1 \
     OPENFIRE_USER=openfire \
     OPENFIRE_DATA_DIR=/var/lib/openfire \
     OPENFIRE_LOG_DIR=/var/log/openfire \

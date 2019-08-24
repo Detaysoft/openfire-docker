@@ -44,6 +44,14 @@ initialize_data_dir() {
   fi
 }
 
+initialize_lib_dir() {
+  echo "Initializing ${OPENFIRE_LIB_DIR}..."
+
+  mkdir -p ${OPENFIRE_LIB_DIR}
+  chmod -R 0770 ${OPENFIRE_LIB_DIR}
+  chown -R ${OPENFIRE_USER}:${OPENFIRE_USER} ${OPENFIRE_LIB_DIR}
+}
+
 initialize_log_dir() {
   echo "Initializing ${OPENFIRE_LOG_DIR}..."
   mkdir -p ${OPENFIRE_LOG_DIR}
@@ -59,6 +67,7 @@ fi
 
 rewire_openfire
 initialize_data_dir
+initialize_lib_dir
 initialize_log_dir
 
 # default behaviour is to launch openfire
