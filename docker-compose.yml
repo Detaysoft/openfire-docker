@@ -12,8 +12,8 @@ services:
       - "7070:7070"
       - "9090:9090"
     volumes:
-      - '/var/openfire/data:/var/lib/openfire'
-      - '/var/openfire/plugins:/usr/share/openfire/plugins'
+      - 'openfire-data:/var/lib/openfire'
+      - 'openfire-plugins:/usr/share/openfire/plugins'
       - 'openfire-lib:/usr/share/openfire/lib'
 
   # DATABASE
@@ -29,4 +29,6 @@ services:
       MYSQL_DATABASE: 'openfire'
 
 volumes:
+  openfire-data:
+  openfire-plugins:
   openfire-lib:
