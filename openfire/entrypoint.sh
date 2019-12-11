@@ -50,7 +50,11 @@ initialize_lib_dir() {
   mkdir -p ${OPENFIRE_LIB_DIR}
   chmod -R 0770 ${OPENFIRE_LIB_DIR}
   chown -R ${OPENFIRE_USER}:${OPENFIRE_USER} ${OPENFIRE_LIB_DIR}
-  cp -R ${OPENFIRE_LIB_DIR}/* /usr/share/openfire/lib/
+
+  files=( ${OPENFIRE_LIB_DIR}/* )
+  if [[ -e $files || -L $files ]]; then
+    cp -R ${OPENFIRE_LIB_DIR}/* /usr/share/openfire/lib/
+  fi
 }
 
 initialize_log_dir() {
