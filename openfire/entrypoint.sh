@@ -50,6 +50,7 @@ initialize_lib_dir() {
   mkdir -p ${OPENFIRE_LIB_DIR}
   chmod -R 0770 ${OPENFIRE_LIB_DIR}
   chown -R ${OPENFIRE_USER}:${OPENFIRE_USER} ${OPENFIRE_LIB_DIR}
+  cp -R ${OPENFIRE_LIB_DIR}/* /usr/share/openfire/lib/
 }
 
 initialize_log_dir() {
@@ -82,4 +83,3 @@ if [[ -z ${1} ]]; then
 else
   exec "$@"
 fi
-

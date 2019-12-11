@@ -1,12 +1,12 @@
 FROM xqdocker/ubuntu-openjdk:jre-8
 MAINTAINER abdurrahman.eker@detaysoft.com
 
-ENV OPENFIRE_VERSION=4.4.1 \
+ENV OPENFIRE_VERSION=4.4.2 \
     OPENFIRE_USER=openfire \
     OPENFIRE_DATA_DIR=/var/lib/openfire \
     OPENFIRE_LOG_DIR=/var/log/openfire \
     OPENFIRE_PLUGINS_DIR=/usr/share/openfire/plugins \
-    OPENFIRE_LIB_DIR=/usr/share/openfire/lib
+    OPENFIRE_LIB_DIR=/usr/share/openfire-custom-libs
 
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y sudo curl wget \
