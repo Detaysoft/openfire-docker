@@ -55,6 +55,8 @@ initialize_lib_dir() {
   if [[ -e $files || -L $files ]]; then
     cp -R ${OPENFIRE_LIB_DIR}/* /usr/share/openfire/lib/
   fi
+
+  chown -R ${OPENFIRE_USER}:${OPENFIRE_USER} /usr/share/openfire/lib/
 }
 
 initialize_log_dir() {
