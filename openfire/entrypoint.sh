@@ -85,6 +85,10 @@ if [[ -z ${1} ]]; then
     -DopenfireHome=/usr/share/openfire \
     -Dopenfire.lib.dir=/usr/share/openfire/lib \
     -classpath /usr/share/openfire/lib/startup.jar \
+    -javaagent:${APM_JAR_DIR}/elastic-apm-agent-${APM_VERSION}.jar \
+    -Delastic.apm.service_name=openfire-service \
+    -Delastic.apm.application_packages=org.jivesoftware.openfire \
+    -Delastic.apm.server_urls=http://${APM_HOST}:8200 \
     -jar /usr/share/openfire/lib/startup.jar ${EXTRA_ARGS}
 else
   exec "$@"
