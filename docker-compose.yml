@@ -6,7 +6,7 @@ services:
     depends_on:
       - db
       - beat
-    image: abdurrahmanekr/openfire:4.4.2-apm
+    image: abdurrahmanekr/openfire:4.5.1-apm
     pid: "host"
     ports:
       - "17070:7070"
@@ -17,6 +17,7 @@ services:
       - 'openfire-lib:/usr/share/openfire-custom-libs'
     environment:
       APM_HOST: 'beat'
+      OPENFIRE_OPTS: "-Xmx2G -Xms512m -XX:NewRatio=1 -XX:SurvivorRatio=4 -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:+UseParNewGC -XX:+CMSParallelRemarkEnabled -XX:CMSFullGCsBeforeCompaction=1 -XX:CMSInitiatingOccupancyFraction=80 -XX:+UseCMSInitiatingOccupancyOnly -XX:+PrintGCDetails -XX:+PrintPromotionFailure"
     networks:
       - apm
 
@@ -25,7 +26,7 @@ services:
     depends_on:
       - db
       - beat
-    image: abdurrahmanekr/openfire:4.4.2-apm
+    image: abdurrahmanekr/openfire:4.5.1-apm
     pid: "host"
     ports:
       - "17071:7070"
@@ -36,6 +37,7 @@ services:
       - 'openfire-lib:/usr/share/openfire-custom-libs'
     environment:
       APM_HOST: 'beat'
+      OPENFIRE_OPTS: "-Xmx2G -Xms512m -XX:NewRatio=1 -XX:SurvivorRatio=4 -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:+UseParNewGC -XX:+CMSParallelRemarkEnabled -XX:CMSFullGCsBeforeCompaction=1 -XX:CMSInitiatingOccupancyFraction=80 -XX:+UseCMSInitiatingOccupancyOnly -XX:+PrintGCDetails -XX:+PrintPromotionFailure"
     networks:
       - apm
 
