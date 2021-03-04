@@ -6,7 +6,7 @@ services:
     depends_on:
       - db
       - beat
-    image: abdurrahmanekr/openfire:4.5.1-apm
+    image: abdurrahmanekr/openfire:4.6.2-apm
     pid: "host"
     ports:
       - "17070:7070"
