@@ -1,13 +1,13 @@
 FROM xqdocker/ubuntu-openjdk:jre-8
 MAINTAINER abdurrahman.eker@detaysoft.com
 
-ENV OPENFIRE_VERSION=4.6.2 \
+ENV OPENFIRE_VERSION=4.7.4 \
     OPENFIRE_USER=openfire \
     OPENFIRE_DATA_DIR=/var/lib/openfire \
     OPENFIRE_LOG_DIR=/var/log/openfire \
     OPENFIRE_PLUGINS_DIR=/usr/share/openfire/plugins \
     OPENFIRE_LIB_DIR=/usr/share/openfire-custom-libs \
-    APM_VERSION=1.14.0 \
+    APM_VERSION=1.35.0 \
     APM_JAR_DIR=/usr/share/elastic-apm-agent \
     APM_HOST=apm
 
